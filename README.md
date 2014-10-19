@@ -7,4 +7,6 @@
 
 ```
 
-Obrazek ![logo](http://blog.hostmysite.com/wp-content/uploads/2014/09/bash-logo-small.jpg).
+Obrazek 
+
+![logo](http://blog.hostmysite.com/wp-content/uploads/2014/09/bash-logo-small.jpg).

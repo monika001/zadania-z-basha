@@ -6,70 +6,59 @@ Treści dostępne sa na [stronie](http://wbzyl.inf.ug.edu.pl/sp/labs01).
 ### Laboratorium 1
 
 1\. Używając linii poleceń stwórz strukturę katalogów:
-
 ```sh
 mkdir ~/temp/{dom,nauka/{c,logo,pascal},praca/{dokumenty,zlecenia/{niezrealizowane,zrealizowane}}} -p
 
 ```
-
 2\.Przejdź do katalogu dom i utwórz katalog wazne-sprawy.
-
 ```sh
 mkdir ~/temp/dom/wazne-sprawy
 ```
 
 3\Wejdź do katalogu wazne-sprawy i utwórz tam pusty plik rachunki.txt.
-
 ```sh
 touch ~/temp/dom/wazne-sprawy/rachunki.txt
 ```
 
 4\.Będąc w katalogu wazne-sprawy skopiuj plik rachunki.txt do katalogu zrealizowane.
-
 ```sh
 cp rachunki.txt ~/temp/praca/zlecenia/zrealizowane
 ```
 
 5\.Przejdź do katalogu zrealizowane i zmień nazwę pliku rachunki.txt na wykonano.txt.
-
 ```sh
 cd praca/zlecenia/zrealizowane/
 mv rachunki.txt wykonano.txt
 ```
 
 6\.Utwórz plik wykonano.txt wielkości 11 bajtów, następnie podziel go pliki wielkości 5 bajtów. W ten sposób otrzymasz 3 pliki.
-
 ```sh
 touch wykonano.txt
 atom wykonano. txt
-```
-
-```sh
 split -b 5 wykonano.txt
 ```
-7\.Będąc w katalogu logo skopiuj powyżej otrzymane 3 pliki do katalogu dokumenty.
 
+7\.Będąc w katalogu logo skopiuj powyżej otrzymane 3 pliki do katalogu dokumenty.
 ```sh
-~/temp$ cd nauka/logo
+cd ~/temp/nauka/logo
 cp ~/temp/praca/zlecenia/zrealizowane/{xaa,xab,xac} ~/temp/praca/dokumenty/
 ```
-8\.Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik odtworzono.txt, tak aby otrzymać plik o zawartości identycznej z wykonano.txt. Następnie plik odtworzono.txt skopiuj do katalogu wazne-sprawy.
 
+8\.Będąc w katalogu dokumenty połącz skopiowane 3 pliki w plik odtworzono.txt, tak aby otrzymać plik o zawartości identycznej z wykonano.txt. Następnie plik odtworzono.txt skopiuj do katalogu wazne-sprawy.
 ```sh
 cat xaa xab xac > odtworzono.txt
 cp odtworzono.txt ~/temp/dom/wazne-sprawy/
 ```
+
 9\.Będąc w katalogu wazne-sprawy sprawdź, czy są jakieś różnice w zawartości plików wykonano.txt i odtworzono.txt.
 Odp: Nie ma. 
 
 10\.Wyświetl kalendarz na październik 2009 r.
-
 ```sh
 cal oct 2009
 ```
 
 Wyświetl kalendarz na wrzesień, październik i listopad 2009 r. z miesiącami obok siebie (cal):
-
 ```sh
 cal -3 oct 2009
 
@@ -83,7 +72,6 @@ ni po wt śr cz pi so  ni po wt śr cz pi so  ni po wt śr cz pi so
 ```
 
 Wyświetl kalendarz na październik, listopad i grudzień 2009 r. w taki sposób:
-
 ```sh
 cal -3 nov 2009
                             2009
@@ -96,7 +84,6 @@ ni po wt śr cz pi so  ni po wt śr cz pi so  ni po wt śr cz pi so
 25 26 27 28 29 30 31  29 30                 27 28 29 30 31   
 ```
 I jeszcze raz na wrzesień i październik oraz na październik i listopad 2009 r z miesiącami obok siebie:
-
 ```sh
 cal -A 1 sep 2009
 
@@ -126,26 +113,46 @@ cal -H 1975-05-25
 Sobota
 ```
 ### Laboratorium 2
-nauka/c$ touch program.c
-mczarkowska@p51-18-lan:~/temp/nauka/c$ cd program.c
 
+1\. Wyświetl na ekran 2 pierwsze wiersze pliku program.c. (head)
+```sh
+cd ~/temp/nauka/c
+atom program.c
+head program.c
+```
+2\. Wyświetl na ekran 4 ostatnie wiersze pliku program.c. (head, tail)
+```sh
+tail -n 4 program.c
+```
 
-mczarkowska@p51-18-lan:~/temp/nauka/c$ head program.c
-// Suma, różnica, iloczyn, iloraz
-#include <stdio.h>
-#include <conio.h>
-main()
-{
-        double liczba1,liczba2,wynik;
-        printf("\n Podaj pierwsza liczbe:\n ");
-        scanf("%lf",&liczba1);
-        printf("\n Podaj druga liczbe:\n ");
-        scanf("%lf",&liczba2);
-mczarkowska@p51-18-lan:~/temp/nauka/c$ 
+3\. W pliku program.c znajdź wszystkie wiersze z wystąpieniem słowa „main”. (grep)
+```sh
+grep 'main' program.c
+```
+4\. Plikowi program.c nadaj następujące uprawnienia: właściciel – czytanie, pisanie, grupa – czytanie, pozostali użytkownicy: brak uprawnień. (chmod)
+```sh
+chmod u=rw,g=r,o=--- program.c
+```
+5\. Będąc w katalogu temp przenieś katalog wazne-sprawy do katalogu praca.
+```sh
+cd temp
+mv dom/wazne-sprawy praca
+```
+6\. Zarchiwizuj cały katalog temp. (zip i tar)
+```sh
+tar -czf archiwum1.tar.gz temp
+tar -czf archiwum1.tar.gz temp
+```
+7\. Usuń katalog temp.
+```sh
+rm -r temp
+```
 
-
-
-
+8\. Odtwórz z archiwum katalog temp. (unzip i tar)
+```sh
+tar -xzf archiwum1.tar.gz
+unzip archiwum2.zip
+```
 
 
 

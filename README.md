@@ -8,27 +8,26 @@ Treści dostępne sa na [stronie](http://wbzyl.inf.ug.edu.pl/sp/labs01).
 1\. Używając linii poleceń stwórz strukturę katalogów:
 
 ```sh
-mkdir temp/{dom,nauka/{c,logo,pascal},praca/{dokumenty,zlecenia/{zrealizowane,niezrealizowane}}} -p
+mkdir ~/temp/{dom,nauka/{c,logo,pascal},praca/{dokumenty,zlecenia/{niezrealizowane,zrealizowane}}} -p
+
 ```
 
 2\.Przejdź do katalogu dom i utwórz katalog wazne-sprawy.
 
 ```sh
-cd dom
-mkdir wazne-sprawy
+mkdir ~/temp/dom/wazne-sprawy
 ```
 
 3\Wejdź do katalogu wazne-sprawy i utwórz tam pusty plik rachunki.txt.
 
 ```sh
-cd wazne-sprawy
-touch rachunki.txt
+touch ~/temp/dom/wazne-sprawy/rachunki.txt
 ```
 
 4\.Będąc w katalogu wazne-sprawy skopiuj plik rachunki.txt do katalogu zrealizowane.
 
 ```sh
-cp rachunki.txt ~/temp/praca/zlecenia/zrealizowane/
+cp rachunki.txt ~/temp/praca/zlecenia/zrealizowane
 ```
 
 5\.Przejdź do katalogu zrealizowane i zmień nazwę pliku rachunki.txt na wykonano.txt.

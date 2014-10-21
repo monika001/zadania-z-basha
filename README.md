@@ -157,7 +157,7 @@ unzip archiwum2.zip
 
 1\. Wyświetl plik /etc/passwd z podziałem na strony przyjmując, że strona na 5 linii tekstu. (raczej more niż less)
 ```sh
- more -5 passwd.txt
+ more -5 /etc/passwd
  ```
 2\. Korzystając z polecenia cat utwórz plik tekst3.txt, który będzie składał się z zawartości pliku tekst1.txt, ciągu znaków podanego ze standardowego wejścia (klawiatury) i pliku tekst2.txt.
 ```sh
@@ -166,5 +166,48 @@ touch tekst2.txt
 cat tekst1.txt tekst2.txt > tekst3.txt
 ```
 
+4\. Wyświetl linie o numerach 3, 4 i 5 z pliku /etc/passwd.
+```sh
+sed -n '3,5p' /etc/passwd
+```
 
+5\. Wyświetl linie o numerach 7, 6 i 5 od końca pliku /etc/passwd.
+```sh
+tail -n 7 /etc/passwd | head -n 1
+tail -n 6 /etc/passwd | head -n 1
+tail -n 5 /etc/passwd | head -n 1
+```
+
+6\. Wyświetl zawartość pliku /etc/passwd w jednej linii.
+```sh
+cat /etc/passwd | tr '\n' ' '
+```
+7\. Za pomocą filtru tr wykonaj modyfikację pliku plik.txt, polegającą na wypisaniu każdego słowa w osobnej linii.
+```sh
+cat /etc/passwd | tr ' ' '\n'
+```
+8\. Zlicz wszystkie pliki znajdujące się w katalogu /var i jego podkatalogach.
+```sh
+ls -1 /var | wc -l
+```
+9\. Napisać polecenie zliczające ilość znaków z pierwszych trzech linii pliku /etc/passwd.
+```sh
+cat /etc/passwd |head -n 3 |wc -c
+```
+###Laboratorium 4
+
+Laboratorium 4
+
+1\. Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże.
+```sh
+ls | tr [:lower:] [:upper:]
+```
+2\. Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę.
+```sh
+ls -l | awk '{print $1,$5,$9}'
+```
+3\. Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliku.
+```sh
+ls -l | sort -k5,5
+```
 

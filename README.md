@@ -1,5 +1,5 @@
 ## Bash -- zadania
-[Czarkowska, Monika](https://github.com/monika001/zadania-z-basha/),[1](https://github.com/monika001/Programowanie-w-C)
+
 Treści dostępne sa na [stronie](http://wbzyl.inf.ug.edu.pl/sp/labs01).
 
 ## Bash -- zadania
